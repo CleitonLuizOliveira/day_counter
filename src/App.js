@@ -35,7 +35,7 @@ function App() {
                         <h3>Até hoje, você já viveu {answer} dias!</h3>
                     </If>
                 </If>
-                
+                <button onClick={() => setIsBrazil(!isBrazil)}> {isBrazil ? "English" : "Português"} </button>
             </div>
         </div>
     );
