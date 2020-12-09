@@ -16,10 +16,12 @@ function App() {
 
     return (
         <div className="App">
-            <h2>How many days have you lived until today?</h2>
-            <label htmlFor="">Select yout birthday below and you will know!</label>
-            <input type="date" value={birthDay} onChange={event => setBirthDay(event.currentTarget.value) } />
-            <h3>Up until today you have lived {answer} days!</h3>
+            <div className="container">
+                <h2>How many days have you lived until today?</h2>
+                <label htmlFor="">Select yout birthday below and you will know!</label>
+                <input type="date" value={birthDay} onChange={event => setBirthDay(event.currentTarget.value) } />
+                {birthDay !== 0 ? <h3>Up until today you have lived {answer} days!</h3> : <div></div>}
+            </div>
         </div>
     );
 }
