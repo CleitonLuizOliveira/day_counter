@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
+import If from './components/If';
 import './App.css';
 
 function App() {
 
     const [answer, setAnswer] = useState(0);
     const [birthDay, setBirthDay] = useState(0);
+    const [isBrazil, setIsBrazil] = useState(false);
 
     const today = new Date();
     const realToday = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDay()}`
@@ -20,7 +22,10 @@ function App() {
                 <h2>How many days have you lived until today?</h2>
                 <label htmlFor="">Select yout birthday below and you will know!</label>
                 <input type="date" value={birthDay} onChange={event => setBirthDay(event.currentTarget.value) } />
-                {birthDay !== 0 ? <h3>Up until today you have lived {answer} days!</h3> : <div></div>}
+                {/* {birthDay !== 0 ? <h3>Up until today you have lived {answer} days!</h3> : <div></div>} */}
+                <If test={birthDay !== 0}>
+                    <h3>Up until today you have lived {answer} days!</h3>
+                </If>
             </div>
         </div>
     );
