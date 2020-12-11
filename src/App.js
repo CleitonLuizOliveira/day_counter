@@ -9,7 +9,7 @@ function App() {
     const [isBrazil, setIsBrazil] = useState(true);
 
     const today = new Date();
-    const realToday = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDay()}`
+    const realToday = `${today.getFullYear()}-${(today.getMonth() + 1).toString().padStart(2, '0')}-${today.getDay()}`
 
     useEffect(() => {
         const newAnswer = Math.ceil(Math.abs(new Date(realToday) - new Date(birthDay)) / (1000 * 60 * 60 * 24));
